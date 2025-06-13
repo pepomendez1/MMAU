@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Museo Metropolitano de Arte Urbano</title>
+  <link href="https://fonts.googleapis.com/css2?family=Ysabeau+Office:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="imagenes/mmau_logo.jpg">
+
+  <style>
+    :root {
+      --color1: #d05421;
+      --color2: #8f9c67;
+      --text: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+      transition: all 0.5s ease;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Ysabeau Office', sans-serif;
+      background-color: var(--color2);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      background-color: var(--color1);
+      z-index: 1000;
+    }
+
+    nav a {
+      color: var(--text);
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+
+    header {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: url(img/logo.jpeg) center/cover no-repeat;
+      text-align: center;
+      color: var(--text);
+      position: relative;
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    header h1, header p {
+      position: relative;
+      z-index: 1;
+      animation: slideFadeIn 2s ease forwards;
+    }
+
+    @keyframes slideFadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    section {
+      padding: 80px 20px;
+      text-align: center;
+      animation: fadeInUp 1s ease both;
+    }
+
+    section h2 {
+      color: var(--color1);
+      margin-bottom: 40px;
+      font-size: 2.5rem;
+      animation: bounceIn 1.5s;
+    }
+
+    .cards, .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .card, .gallery img {
+      background-color: var(--color1);
+      color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery img {
+      width: 250px;
+    }
+
+    .card:hover, .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    input, textarea {
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+    }
+
+    input[type="submit"] {
+      background-color: var(--color1);
+      color: var(--text);
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: var(--color2);
+    }
+
+    iframe {
+      width: 100%;
+      height: 400px;
+      border: none;
+      border-radius: 10px;
+    }
+
+    footer {
+      background-color: var(--color1);
+      text-align: center;
+      color: var(--text);
+      padding: 30px 20px;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes bounceIn {
+      0%, 20%, 40%, 60%, 80%, 100% {
+        transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+      }
+      0% {
+        opacity: 0;
+        transform: scale3d(.3, .3, .3);
+      }
+      20% {
+        transform: scale3d(1.1, 1.1, 1.1);
+      }
+      40% {
+        transform: scale3d(.9, .9, .9);
+      }
+      60% {
+        opacity: 1;
+        transform: scale3d(1.03, 1.03, 1.03);
+      }
+      80% {
+        transform: scale3d(.97, .97, .97);
+      }
+      100% {
+        opacity: 1;
+        transform: scale3d(1, 1, 1);
+      }
+    }
+
+    .language-switcher {
+      position: fixed;
+      top: 80px;
+      right: 20px;
+      background-color: var(--color1);
+      color: var(--text);
+      border-radius: 5px;
+      padding: 10px;
+      cursor: pointer;
+      z-index: 1000;
+    }
+  </style>
+</head>
+<body>
+  <a class="whatsapp" href="https://wa.me/5493510000000" target="_blank">
+  <img src="imagenes/whatsapp_foto.webp" alt="WhatsApp" style="width: 60px; height: 60px;">
+  </a>
+
+
+  <div class="language-switcher" onclick="alert('Traducción próximamente disponible')">< EN</div>
+
+  <nav>
+    <a href="#galeria">Galería</a>
+    <a href="#actividades">Actividades</a>
+    <a href="#exposiciones">Exposiciones</a>
+    <a href="#recorridos">Recorridos</a>
+    <a href="#horarios">Horarios</a>
+    <a href="#afluencia">Afluencia</a>
+    <a href="#comentarios">Comentarios</a>
+    <a href="#reservas">Reservas</a>
+    <a href="#ubicacion">Ubicación</a>
+    <div style="position: fixed; top: 140px; right: 20px; z-index: 1000;">
+      <button onclick="toggleDarkMode()">🌓</button>
+      <button onclick="aumentarTexto()">🔠</button>
+    </div>
+  </nav>
+
+  <header>
+    <h1>Museo Metropolitano de Arte Urbano</h1>
+    <p>Un espacio cultural vibrante en Plaza España, Córdoba.</p>
+  </header>
+
+  <section id="galeria">
+    <h2>Galería</h2>
+    <div class="gallery">
+      <img src="img/portada-ph.roger-berta.jpg" alt="Arte urbano">
+      <img src="img/MAR4288-18-eM.jpg" alt="Mural">
+      <img src="img/4-Z8bwJw1_2000x1500__1.jpg" alt="Street Art">
+    </div>
+  </section>
+
+  <section id="actividades">
+    <h2>Actividades</h2>
+    <div class="cards">
+      <div class="card">Talleres de arte urbano</div>
+      <div class="card">Charlas con artistas</div>
+      <div class="card">Eventos mensuales</div>
+    </div>
+  </section>
+
+  <section id="exposiciones">
+    <h2>Exposiciones</h2>
+    <div class="cards">
+      <div class="card">Arte local contemporáneo</div>
+      <div class="card">Grafitis históricos</div>
+      <div class="card">Instalaciones interactivas</div>
+    </div>
+  </section>
+
+  <section id="recorridos">
+    <h2>Recorridos</h2>
+    <p>Recorridos guiados los fines de semana a las 11h, 14h y 17h.</p>
+  </section>
+
+  <section id="horarios">
+    <h2>Horarios y Afluencia</h2>
+    <p><strong>Alta concurrencia:</strong> Sábados y domingos de 15h a 18h.</p>
+    <p><strong>Menor afluencia:</strong> Miércoles y jueves de 10h a 12h.</p>
+  </section>
+
+<section id="afluencia">
+  <h2>Afluencia</h2>
+  <div class="grafico-container">
+    <canvas id="graficoAfluencia"></canvas>
+    <div style="margin-top: 30px;"></div>
+  </div>
+</section>
+
+
+  <section id="comentarios">
+    <h2>Opiniones</h2>
+    <div class="cards">
+      <div class="card">Una experiencia artística única.  Lucía</div>
+      <div class="card">Increíble muestra de arte urbano.  Tomás</div>
+      <div class="card">Ideal para conocer artistas locales.  Carla</div>
+    </div>
+  </section>
+
+<section id="reservas">
+  <h2>Reservar visita</h2>
+  <form id="formReserva">
+    <input id="nombre" type="text" placeholder="Tu nombre" required>
+    
+    <!-- Nuevo campo para seleccionar día -->
+    <input id="dia" type="date" required>
+
+    <!-- Ya existente: seleccionar hora -->
+    <input id="hora" type="time" required>
+
+    <input type="submit" value="Reservar">
+  </form>
+  <div id="confirmacionReserva" style="margin-top: 20px;"></div>
+</section>
+
+
+  <section id="ubicacion">
+    <h2>¿Dónde estamos?</h2>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11097.067177053944!2d-64.1912163!3d-31.4253147!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9432a28f35f34d41%3A0x3c0c83fdba8bba6a!2sPlaza%20Espa%C3%B1a%2C%20C%C3%B3rdoba!5e0!3m2!1ses-419!2sar!4v1620254790964!5m2!1ses-419!2sar" allowfullscreen loading="lazy"></iframe>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Museo Metropolitano de Arte Urbano - Córdoba, Argentina</p>
+  </footer>
+  <!-- Librería para gráficos -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<!-- Funciones de accesibilidad -->
+<script src="Accesibilidad.js"></script>
+
+<!-- Gráficos de afluencia -->
+<script src="afluencia.js"></script>
+
+<!-- Reservas de visitas -->
+<script src="reservas.js"></script>
+
+</body>
+</html>

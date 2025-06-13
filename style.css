@@ -1,0 +1,85 @@
+.download-button {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.download-button a {
+  display: inline-flex;
+  align-items: center;
+  background-color: var(--color1);
+  color: var(--text);
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: transform 0.2s ease, background 0.3s;
+}
+
+.download-button a:hover {
+  background-color: var(--color2);
+  transform: scale(1.05);
+  animation: pulse 1s infinite;
+}
+
+.download-button .icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+}
+
+.whatsapp img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.whatsapp img:hover {
+  transform: scale(1.1);
+}
+
+.grafico-container {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+canvas {
+  background-color: #fefefe;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode {
+  background-color: #1e1e1e;
+  color: #ffffff;
+}
+
+body.dark-mode nav {
+  background-color: #333;
+}
+
+body.dark-mode .card,
+body.dark-mode .gallery img,
+body.dark-mode footer {
+  background-color: #444;
+}
+
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1.05);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
