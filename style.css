@@ -74,6 +74,17 @@ body.dark-mode footer {
   background-color: #444;
 }
 
+nav {
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Estilo opcional para que los enlaces no se corten feo */
+nav a {
+  display: inline-block;
+  padding: 10px 15px;
+}
 
 @keyframes pulse {
   0%, 100% {
