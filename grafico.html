@@ -2,10 +2,10 @@ const ctx = document.getElementById('graficoAfluencia').getContext('2d');
 const grafico = new Chart(ctx, {
   type: 'bar',
   data: {
-    labels: ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'],
+    labels: ['Martes', 'MiÃ©rcoles', 'Jueves', 'Viernes', 'SÃ¡bado', 'Domingo'],
     datasets: [{
-      label: 'Visitantes por día (estimado)',
-      data: [80, 60, 70, 90, 150, 300, 250],
+      label: 'Visitantes por dÃ­a (estimado)',
+      data: [60, 70, 90, 150, 300, 250],
       backgroundColor: '#3f88c5'
     }]
   },
@@ -21,15 +21,15 @@ const grafico = new Chart(ctx, {
     }
   }
 });
-// Visitantes por día (ya lo tenías)
+// Visitantes por dÃ­a (ya lo tenÃ­as)
 const ctx1 = document.getElementById('graficoAfluencia').getContext('2d');
 const grafico1 = new Chart(ctx1, {
   type: 'bar',
   data: {
-    labels: ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'],
+    labels: [ 'Martes', 'MiÃ©rcoles', 'Jueves', 'Viernes', 'SÃ¡bado', 'Domingo'],
     datasets: [{
-      label: 'Visitantes por día (estimado)',
-      data: [80, 60, 70, 90, 150, 300, 250],
+      label: 'Visitantes por dÃ­a (estimado)',
+      data: [ 60, 70, 90, 150, 300, 250],
       backgroundColor: '#3f88c5'
     }]
   },
@@ -45,10 +45,10 @@ const ctx2 = document.getElementById('graficoHoras').getContext('2d');
 const grafico2 = new Chart(ctx2, {
   type: 'line',
   data: {
-    labels: ['8:00', '10:00', '12:00', '14:00', '16:00', '18:00', '20:00'],
+    labels: [ '10:00', '12:00', '14:00', '16:00', '18:00', '20:00'],
     datasets: [{
       label: 'Promedio por hora',
-      data: [20, 35, 60, 50, 80, 120, 90],
+      data:  [35, 60, 50, 80, 120, 90],
       borderColor: '#f2545b',
       fill: false
     }]
